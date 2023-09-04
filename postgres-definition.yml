@@ -1,0 +1,18 @@
+appVersion: v1
+kind: Pod
+metadata:
+  name: postgress-app
+  labels:
+    app: postgress-app
+    appType: voting-app
+spec:
+  containers:
+    - name: postgress-app
+      image: postgress:9.4
+      ports:
+        - containerPort: 5432
+      env:
+        - name: POSTGRES_USER
+          value: postgress
+        - name: POSTGRES_PASSWORD
+          value: postgress

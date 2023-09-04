@@ -1,0 +1,15 @@
+appVersion: v1
+kind: Service
+metadata:
+  name: redis
+  labels:
+    app: redis-service
+    appType: voting-app
+spec:
+  type: ClusterIP
+  selector:
+    appType: voting-app
+  ports:
+    - name: http
+      port: 6379
+      targetPort: 6379
