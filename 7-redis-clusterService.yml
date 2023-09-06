@@ -6,7 +6,6 @@ metadata:
     app: redis-service
     appType: voting-app
 spec:
-  type: ClusterIP
   selector:
     appType: voting-app
   ports:
