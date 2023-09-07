@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: vote-ingress
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /$1
+  annotations:  
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: 'nginx'
