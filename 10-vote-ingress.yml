@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: vote-ingress
   annotations:
-    spec.ingressClassName: 'nginx'
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: 'nginx'
   rules:
   - http:
       paths:
