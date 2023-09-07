@@ -16,7 +16,7 @@ spec:
             name: vote-service
             port:
               number: 80
-      - path: /?(.*)
+      - path: /result/?(.*)
         pathType: ImplementationSpecific
         backend:
           service:
