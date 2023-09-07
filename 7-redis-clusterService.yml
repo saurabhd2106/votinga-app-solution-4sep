@@ -9,6 +9,6 @@ spec:
   selector:
     appType: voting-app
   ports:
-    - name: http
+    - protocol: TCP
       port: 6379
       targetPort: 6379
