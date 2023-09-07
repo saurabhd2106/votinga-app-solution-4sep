@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: vote-ingress
   annotations:
-    ingressClassName: nginx
+    ingressClassName: 'nginx'
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
