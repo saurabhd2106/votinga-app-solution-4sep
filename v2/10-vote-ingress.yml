@@ -4,13 +4,12 @@ metadata:
   name: vote-ingress
   namespace: vote
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: 'nginx'
   rules:
   - http:
       paths:
-      - path: /
+      - path: /vote
         pathType: Prefix
         backend:
           service:
