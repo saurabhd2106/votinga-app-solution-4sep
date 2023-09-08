@@ -6,6 +6,8 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/use-regex: 'true'
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      rewrite ^(/result)$ $1/ redirect;
 spec:
   ingressClassName: 'nginx'
   rules:
