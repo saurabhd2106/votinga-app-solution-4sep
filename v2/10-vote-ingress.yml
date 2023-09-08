@@ -4,14 +4,17 @@ metadata:
   name: vote-ingress
   namespace: vote
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      rewrite ^(/)$ $1/ redirect;
 spec:
   ingressClassName: 'nginx'
   rules:
   - http:
       paths:
-      - path: /vote/
-        pathType: Prefix
+      - path: /dashboard(/|$)(.*)
+        pathType: ImplementationSpecific
         backend:
           service:
             name: vote
