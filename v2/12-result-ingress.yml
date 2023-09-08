@@ -12,7 +12,7 @@ spec:
   - http:
       paths:
       - path: /result/?(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: result
