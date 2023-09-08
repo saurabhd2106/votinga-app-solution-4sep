@@ -4,8 +4,6 @@ metadata:
   name: vote-ingress
   namespace: vote
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   ingressClassName: 'nginx'
   rules:
