@@ -13,13 +13,6 @@ spec:
   rules:
   - http:
       paths:
-      - path: /?(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: result
-            port:
-              number: 5001
       - path: /result/?(.*)
         pathType: ImplementationSpecific
         backend:
