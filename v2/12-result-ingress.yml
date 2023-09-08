@@ -5,12 +5,13 @@ metadata:
   namespace: vote
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: 'nginx'
   rules:
   - http:
       paths:
-      - path: /
+      - path: /result/?(.*)
         pathType: Prefix
         backend:
           service:
