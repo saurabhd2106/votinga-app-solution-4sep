@@ -10,4 +10,6 @@ kubectl config get-clusters
 
 kubectl config get-contexts
 
+kubectl config use-context <name of the context>
+
 eksctl delete cluster --name eks-cluster --region ap-south-1
