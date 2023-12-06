@@ -7,10 +7,9 @@ metadata:
 spec:
   ingressClassName: 'nginx'
   rules:
-  - host: result.freevotingapp.com
-    http:
+  - http:
       paths:
-      - path: /
+      - path: /result
         pathType: Prefix
         backend:
           service:

@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: vote-ingress
+  namespace: vote
   annotations:  
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/use-regex: 'true'
@@ -15,13 +16,13 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: vote-service
+            name: vote
             port:
-              number: 80
+              number: 5000
       - path: /result/?(.*)
         pathType: ImplementationSpecific
         backend:
           service:
-            name: result-service
+            name: result
             port:
-              number: 81
+              number: 5001
